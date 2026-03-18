@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>n3i - Classical Melody</title>
+    <style>
+        body {
+            background: #1a1a1a;
+            color: #d4af37; /* Warna emas klasik */
+            font-family: 'Georgia', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .record-player { position: relative; }
+
+        .vinyl {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, #333 10%, #111 11%, #111 15%, #333 16%, #111 20%, #111 100%);
+            border-radius: 50%;
+            border: 2px solid #222;
+            animation: spin 5s linear infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+
+        .label {
+            width: 100px;
+            height: 100px;
+            background: #d4af37;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #111;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .message { margin-top: 40px; }
+        h1 { font-style: italic; letter-spacing: 2px; }
+        p { color: #888; font-size: 0.9rem; }
+
+        .signature {
+            margin-top: 20px;
+            font-size: 10px;
+            letter-spacing: 3px;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="player-container">
+        <div class="record-player">
+            <div class="vinyl">
+                <div class="label">Side A: n3i</div>
+            </div>
+        </div>
+
+        <div class="message">
+            <h1>"Classic Love for n3i"</h1>
+            <p>Seperti piringan hitam, cintaku padamu<br>adalah melodi abadi yang takkan usang oleh waktu.</p>
+        </div>
+
+        <div class="signature">
+            PRODUCED BY MR.RM19 - RAMDAN19ID@GMAIL.COM
+        </div>
+    </div>
+
+</body>
+</html>

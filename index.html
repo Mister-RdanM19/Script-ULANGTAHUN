@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For n3i | Eternal Love</title>
+    <style>
+        :root {
+            --romance-pink: #ff4d79;
+            --soft-white: #fff5f7;
+            --glass-white: rgba(255, 255, 255, 0.7);
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffeef2 0%, #ffcad4 100%);
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Kelopak Bunga/Hati Melayang */
+        .falling-heart {
+            position: fixed;
+            top: -10vh;
+            color: var(--romance-pink);
+            font-size: 20px;
+            pointer-events: none;
+            z-index: 0;
+            animation: fall linear forwards;
+            opacity: 0.6;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            z-index: 10;
+        }
+
+        h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.8rem;
+            color: var(--romance-pink);
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+            font-style: italic;
+        }
+
+        .dedication {
+            margin-top: 15px;
+            color: #888;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1000px;
+            padding-bottom: 80px;
+            z-index: 10;
+        }
+
+        .card-love {
+            background: var(--glass-white);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 77, 121, 0.2);
+            padding: 30px 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(255, 77, 121, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-love:hover {
+            transform: translateY(-8px);
+            background: #fff;
+            box-shadow: 0 15px 30px rgba(255, 77, 121, 0.15);
+            border-color: var(--romance-pink);
+        }
+
+        .card-love .icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card-love .label {
+            color: var(--romance-pink);
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            padding: 40px;
+            font-size: 0.8rem;
+            color: #999;
+            text-align: center;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Happy Birthday, n3i</h1>
+        <div class="dedication">Kumpulan script happy Birthday</div>
+    </header>
+
+    <div class="grid-container" id="love-nav">
+        </div>
+
+    <footer>
+        Dibuat dengan kasih oleh Mr.Rm19<br>
+        2026 | ramdan19id@gmail.com
+    </footer>
+
+    <script>
+        // Generate Menu
+        const nav = document.getElementById('love-nav');
+        for (let i = 1; i <= 30; i++) {
+            const a = document.createElement('a');
+            a.href = `${i}.html`;
+            a.className = 'card-love';
+            a.innerHTML = `
+                <div class="icon">💝</div>
+                <div class="label">KLIK DISINI</div>
+            `;
+            nav.appendChild(a);
+        }
+
+        // Animasi Hati Berjatuhan
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('falling-heart');
+            heart.innerHTML = Math.random() > 0.5 ? '❤' : '🌸';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+            heart.style.fontSize = Math.random() * 15 + 10 + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }
+        setInterval(createHeart, 400);
+    </script>
+</body>
+</html>

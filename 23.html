@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Celebrate n3i</title>
+    <style>
+        body { margin: 0; height: 100vh; background: #000; overflow: hidden; display: flex; justify-content: center; align-items: center; font-family: 'Arial Black', sans-serif; }
+        canvas { position: absolute; top: 0; left: 0; }
+        .info { z-index: 10; text-align: center; color: white; pointer-events: none; }
+        h1 { font-size: 4rem; text-shadow: 0 0 20px #ff0055; margin: 0; }
+        .sender { font-size: 12px; margin-top: 50px; opacity: 0.6; font-family: sans-serif; }
+    </style>
+</head>
+<body>
+    <canvas id="fw"></canvas>
+    <div class="info">
+        <h1>HBD n3i!</h1>
+        <p style="letter-spacing: 10px;">TERANGILAH DUNIA</p>
+        <div class="sender">Mr.Rm19 - ramdan19id@gmail.com</div>
+    </div>
+    <script>
+        const canvas = document.getElementById('fw');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        function draw() {
+            ctx.fillStyle = 'rgba(0,0,0,0.1)';
+            ctx.fillRect(0,0,canvas.width, canvas.height);
+            for(let i=0; i<5; i++) {
+                ctx.fillStyle = `hsl(${Math.random()*360}, 100%, 50%)`;
+                ctx.beginPath();
+                ctx.arc(Math.random()*canvas.width, Math.random()*canvas.height, 2, 0, Math.PI*2);
+                ctx.fill();
+            }
+            requestAnimationFrame(draw);
+        }
+        draw();
+    </script>
+</body>
+</html>

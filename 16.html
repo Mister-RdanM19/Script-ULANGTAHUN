@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>HBD n3i - Enchanted</title>
+    <style>
+        body { margin: 0; height: 100vh; background: #01161e; display: flex; justify-content: center; align-items: center; overflow: hidden; font-family: 'Georgia', serif; }
+        .forest-content { z-index: 2; text-align: center; color: #92e6a7; text-shadow: 0 0 10px #2d6a4f; }
+        h1 { font-size: 3rem; margin: 0; letter-spacing: 5px; }
+        p { color: #d8f3dc; font-style: italic; margin-top: 20px; font-size: 1.2rem; }
+        .firefly { position: absolute; background: #92e6a7; border-radius: 50%; box-shadow: 0 0 10px #92e6a7; animation: fly linear infinite; opacity: 0; }
+        @keyframes fly { 
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+        .footer { position: absolute; bottom: 20px; font-size: 10px; color: #40916c; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+    <div class="forest-content">
+        <h1>n3i</h1>
+        <p>"Seperti kunang-kunang di tengah hutan,<br>kamulah cahaya di setiap langkahku."</p>
+    </div>
+    <div class="footer">Mr.Rm19 - ramdan19id@gmail.com</div>
+    <script>
+        for (let i = 0; i < 30; i++) {
+            let firefly = document.createElement('div');
+            firefly.className = 'firefly';
+            firefly.style.width = firefly.style.height = Math.random() * 5 + 'px';
+            firefly.style.left = Math.random() * 100 + 'vw';
+            firefly.style.top = Math.random() * 100 + 'vh';
+            firefly.style.animationDuration = Math.random() * 5 + 5 + 's';
+            firefly.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(firefly);
+        }
+    </script>
+</body>
+</html>

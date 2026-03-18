@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>For n3i - Starry Night</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(to bottom, #020111 10%, #191621 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: 'Georgia', serif;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.5); opacity: 1; }
+        }
+
+        .message {
+            z-index: 10;
+            padding: 20px;
+        }
+
+        h1 { font-size: 2.5rem; letter-spacing: 5px; text-shadow: 0 0 20px #fff; }
+        p { font-style: italic; color: #d1d1d1; margin-top: 20px; }
+
+        .signature {
+            position: absolute;
+            bottom: 30px;
+            font-family: sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="message">
+        <h1>Happy Birthday n3i</h1>
+        <p>"Bagaikan bintang yang menerangi malam,<br>semoga bahagiamu tak pernah padam."</p>
+    </div>
+
+    <div class="signature">
+        BY MR.RM19 - RAMDAN19ID@GMAIL.COM
+    </div>
+
+    <script>
+        // Membuat bintang secara acak
+        for (let i = 0; i < 100; i++) {
+            let star = document.createElement('div');
+            star.className = 'star';
+            let size = Math.random() * 3 + 'px';
+            star.style.width = size;
+            star.style.height = size;
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            document.body.appendChild(star);
+        }
+    </script>
+</body>
+</html>
